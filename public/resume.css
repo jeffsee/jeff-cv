@@ -1,0 +1,123 @@
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    html, body {
+        width: 210mm;
+        height: 297mm;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .page {
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        background: initial;
+        page-break-after: always;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+}
+
+p {
+    margin: 10px;
+}
+
+p.heading {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.page {
+    width: 210mm;
+    height: 297mm;
+    margin: 10mm auto;
+    background-color: white;
+}
+
+.resumeHeader {
+    width: 100%;
+    background-color: steelblue;
+    color: white;
+    height: 150px;
+    padding: 30px;
+}
+
+.nameDetails {
+    float: left;
+}
+
+.contactDetails {
+    float: right;
+    text-align: right;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.experience {
+    float: left;
+    width: 65%;
+    padding: 30px;
+}
+
+.skills {
+    float: right;
+    width: 35%;
+    padding: 30px;
+    font-size: 10px;
+}
+
+.jobTitle {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+}
+
+.jobDates {
+    font-style: italic;
+    text-align: right;
+}
+
+.jobDetails {
+    width: 100%;
+    padding: 8px;
+}
+
+.skillTitle {
+    text-align: left;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.skillLevel {
+    text-align: left;
+}
+
+.star {
+    height: 14px;
+    width: 14px;
+}
+
+.education {
+    float: right;
+    width: 35%;
+    padding: 30px;
+}
