@@ -18,18 +18,38 @@ const cvEras = [
         shadowColor: "#000000"
     },
     {
-        id: "High School",
+        id: "Fort Street High School",
+        component: "fshs",
+        position: "High School Student",
+        location: "Petersham, NSW",
         startDate: "1995-01-01",
         endDate: "2001-01-01",
+        dateString: "1995 to 2000",
         details: "Fort Street High School",
         tags: ["Education"],
         backColor: "#660033",
         shadowColor: "#000000"
     },
     {
-        id: "University",
+        id: "University of New South Wales",
+        displayNames: [
+            { display: "University of New South Wales", startDate: "2001-01-01", endDate: "2004-01-01" },
+            { display: "Graduated from UNSW", startDate: "2004-01-01", endDate: "2005-01-10" }
+        ],
+        component: "unsw",
+        position: "Bachelor of Science (B.S.), Computer Science",
+        positions: [
+            { position: "Bachelor of Science (B.S.), Computer Science", startDate: "2001-01-01", endDate: "2004-01-01" },
+            { position: "Job Hunting", startDate: "2004-01-01", endDate: "2005-01-10" }
+        ],
+        location: "Kensington Campus, NSW",
+        locations: [
+            { location: "Kensington Campus, NSW", startDate: "2001-01-01", endDate: "2004-01-01" },
+            { location: "Sydney, NSW", startDate: "2004-01-01", endDate: "2005-01-10" }
+        ],
         startDate: "2001-01-01",
         endDate: "2005-01-10",
+        dateString: "2001 to 2004 (Graduated Semester 2, 2003)",
         details: "University of New South Wales",
         tags: ["Education"],
         backColor: "#FFFF99",
@@ -37,10 +57,18 @@ const cvEras = [
     },
     {
         id: "SEMA Group",
+        displayNames: [
+            { display: "SecurityMail", startDate: "2005-01-10", endDate: "2007-07-01" },
+            { display: "SEMA Group", startDate: "2007-07-01", endDate: "2008-03-26" }
+        ],
+        component: "sema",
+        position: "Rapid Development and Implementation Developer",
         startDate: "2005-01-10",
         endDate: "2008-03-26",
+        dateString: "January 2005 to March 2008",
+        location: "Kingsgrove, NSW",
         details: "Developer in the Rapid Implementation and Development team",
-        tags: ["Work"],
+        tags: ["C", "Java", "Perl", "Shell", "Dialogue"],
         backColor: "#FFCC99",
         shadowColor: "#000000"
     },

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Generic, Redundant2020, DWS, DST, Redundant2013, Converga } from './EraViews.js';
+import { Generic, Redundant2020, DWS, DST, Redundant2013, Converga, SEMA, UNSW, FortStreet } from './EraViews.js';
 
 import { getPositionForGivenDate } from '../common/EraFunctions.js';
 
@@ -12,7 +12,10 @@ const components = {
     dws: DWS,
     dst: DST,
     redundant2013: Redundant2013,
-    converga: Converga
+    converga: Converga,
+    sema: SEMA,
+    unsw: UNSW,
+    fshs: FortStreet
 }
 
 function CVEra(props) {
@@ -39,6 +42,12 @@ function CVEra(props) {
         EraComponent = components["generic"];
     }
 
+    // Get the display name
+    var title = era.id;
+    if (era.displayNames) {
+        title = era.displayNames.filter(d => new Date(d.startDate) <= props.date && new Date(d.endDate) >= props.date)[0].display;
+    }
+
     // Get the position for the given date
     var position = era.position;
     if (era.positions) {
@@ -53,7 +62,7 @@ function CVEra(props) {
 
     return (
         <div className="era" style={eraStyle}>
-            <h1>{era.id}</h1>
+            <h1>{title}</h1>
             <h3>{position}</h3>
             <p className="eraSubHeader alignLeft">{era.dateString}</p>
             <p className="eraSubHeader alignRight">{location}</p>

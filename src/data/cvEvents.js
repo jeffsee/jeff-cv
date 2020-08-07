@@ -1,6 +1,6 @@
 const cvEvents = [
   {
-    id: "1",
+    id: "Birth",
     heading: "Birth",
     eventDate: "1983-05-19",
     dateText: "May 1983",
@@ -8,7 +8,15 @@ const cvEvents = [
     tags: ["Personal"]
   },
   {
-    id: "2",
+    id: "GraduateUNSW",
+    heading: "UNSW Graduation Day",
+    eventDate: "2004-04-30",
+    dateText: "April 2004",
+    details: "Bachelor of Science in Computer Science degree conferred from UNSW on this day.",
+    tags: ["Education"]
+  },
+  {
+    id: "RelocateSydneyToMelbourne",
     heading: "Moved from Sydney to Melbourne",
     eventDate: "2013-09-14",
     dateText: "September 2014",
@@ -16,7 +24,7 @@ const cvEvents = [
     tags: ["Personal"]
   },
   {
-    id: "3",
+    id: "RelocateMelbourneToSydney",
     heading: "Moved from Melbourne to Sydney",
     eventDate: "2016-12-03",
     dateText: "December 2016",
