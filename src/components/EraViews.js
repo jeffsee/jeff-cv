@@ -127,15 +127,8 @@ export function FortStreet(props) {
         <div className="eraDetails alignLeft">
             <p>Fort Street High School is a selective co-educational secondary day school located in the inner west of Sydney. Entry was based off academic merit, based off the Selective High School Placement Test taken at the end of primary school.</p>
             <p>For the HSC (Higher School Certificate), I received a UAI (Universities Admission Index) score of 91.2 out of 100. My subjects were: 3 unit mathematics, 3 unit Computing Studies, 2 unit English, 2 unit Economics and 2 unit Physics.</p>
-            <p>Obviously this was a while ago, so my memory of it is a little hazy, but I'll let this <a href="" onClick={toggleModal}>reference</a> do the talking:</p>
-            <p style={{fontStyle: "italic", textIndent: "0"}}>
-                Jeffrey is a confident young man who demonstrates initiative. His communication skills, both written and oral, are outstanding. He handles pressure very well and is self-motivated. He has a very good sense of humour and relates to others very well. He is punctual, reliable and he is more than willing to take on responsiblity.<br /><br />
-                Jeffrey has participated in the Australian Mathematics, Australian Science and Australian Computer Competitions. He has gained numerous High Distinctions and Distinctions in all three competitions and received two prizes in the Australian Mathematics Competition.<br /><br />
-                Jeffrey has been involved in organisations such as Amnesty International. He has represented his school in grade soccer, rugby and touch football and was also part of the zone cross-country in Years 7 and 8.<br /><br />
-                The school has pleasure in recommending Jeffrey for any position in which he may choose to undertake.
-            </p>
-            <p style={{textAlign: "right", paddingRight: "20px"}}>Ms Roslynne Moxham<br />Principal<br />01/11/2000</p>
-            <p>Couldn't have said it better myself.</p>
+            <p>Obviously this was a while ago, so my memory of it is a little hazy, but I'll let this <a href="./images/fortStreetReference.webp" onClick={toggleModal}>reference</a> do the talking.</p>
+            <p>Computing wise, this is where I really developed my interest in the world of programming. Some of the projects I remember undertaking were a casino game written in QBasic, A horse racing game in Visual Basic, and a dice cricket simulator in Pascal.</p>
             <ModalGateway>
                 {modalIsOpen ? (
                     <Modal onClose={toggleModal}>
@@ -143,6 +136,29 @@ export function FortStreet(props) {
                     </Modal>
                 ) : null} 
             </ModalGateway>
+        </div>
+    );
+
+}
+
+export function BalmainPublic(props) {
+
+    return (
+        <div className="eraDetails alignLeft">
+            <p>Balmain Public School is a co-education primary (K-6) school based in Balmain (appropriately enough).</p>
+            <p>I went to school there. I'd like to think I was a pretty good student. I represented the school in soccer, touch football, cross-country running and the Maths Olympiad.</p>
+            <p>From a career-point of view - this is probably where the seed of software engineering was planted. From an old hand-me-down Atari 2600, we graduated to an IBM 286 running MS-DOS (more second-hand <strike>garbage</strike> treasure from someone else). This would prove to be the catalyst for it all - first editing the config.sys and autoexec.bat files to maximise memory - and then moving on to the included BASIC interpreter to build things. The first thing I remember writing was a blackjack game, which obviously was pretty basic, but was very cool for an eight year old.</p>
+        </div>
+    );
+
+}
+
+export function Childhood(props) {
+
+    return (
+        <div className="eraDetails alignLeft">
+            <p>I was born in the Royal Prince Alfred hospital, Camperdown in Sydney's inner west. Growing up, we lived fairly comfortably in the inner west suburb of Balmain - now a gentrified upper-class haven, but back then was still fairly working class.</p>
+            <p>Obviously, my memory of these times was pretty hazy - but my parents must have done something right, as me and my brother both turned out OK. I've been told I was a fairly bright child - my claim to fame for this time period was that I learnt how to read before attending school, which I'm told is an achievement.</p>
         </div>
     );
 

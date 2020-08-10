@@ -1,18 +1,25 @@
 const cvEras = [
     {
         id: "Childhood",
+        component: "childhood",
+        location: "Balmain, NSW",
         startDate: "1983-05-01",
         endDate: "1988-02-01",
+        dateString: "1983 to 1988",
         details: "My childhood",
         tags: ["Personal"],
         backColor: "#E0E0E0",
         shadowColor: "#000000"
     },
     {
-        id: "Primary School",
+        id: "Balmain Public School",
+        component: "bps",
+        position: "Primary School Student",
+        location: "Balmain, NSW",
         startDate: "1988-02-01",
         endDate: "1995-01-01",
-        details: "Balmain Primary School",
+        dateString: "1998 to 1994",
+        details: "Balmain Public School",
         tags: ["Education"],
         backColor: "#FFFF66",
         shadowColor: "#000000"

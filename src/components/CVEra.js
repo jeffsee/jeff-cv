@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Generic, Redundant2020, DWS, DST, Redundant2013, Converga, SEMA, UNSW, FortStreet } from './EraViews.js';
+import { Generic, Redundant2020, DWS, DST, Redundant2013, Converga, SEMA, UNSW, FortStreet, BalmainPublic, Childhood } from './EraViews.js';
 
 import { getPositionForGivenDate } from '../common/EraFunctions.js';
 
@@ -15,7 +15,9 @@ const components = {
     converga: Converga,
     sema: SEMA,
     unsw: UNSW,
-    fshs: FortStreet
+    fshs: FortStreet,
+    bps: BalmainPublic,
+    childhood: Childhood
 }
 
 function CVEra(props) {
