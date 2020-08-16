@@ -18,16 +18,8 @@
     float: left;
 }
 
-.alignCenter {
-    float: middle;
-}
-
 .alignRight {
     float: right;
-}
-
-.floatReset {
-    float: none;
 }
 
 .dataText {

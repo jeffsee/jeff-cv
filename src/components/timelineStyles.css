@@ -1,0 +1,142 @@
+.timelineHeader {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    padding-top: 25vh;
+}
+
+.downArrow {
+    position: absolute;
+    bottom: 10px;
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    object-fit: contain;
+}
+
+.timeline {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.timelineProfile {
+    padding: 1em;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: lightgray;
+}
+
+.timelineProfileImage {
+    border: 5px solid white;
+    border-bottom: 20px solid white;
+    box-shadow: 3px 3px 3px black;
+    max-height: 100%;
+    flex: 0 0 50px;
+ }
+
+.timelineProfileDetails {
+    margin-left: 1em;
+    height: 100%;
+    vertical-align: middle;
+    flex: 1;
+}
+
+.timelineProfileOtherSelect {
+    flex: 1;
+}
+
+.timelineProfileOther {
+    margin: 1em;
+    flex: 5;
+}
+
+.timelineDate {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    position: flex;
+    z-index: 999;
+    scroll-behavior: smooth;
+    margin: 2em;
+}
+
+.timelineEvent {
+    height: 50%;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    box-shadow: 10px 10px 10px black;
+}
+
+.timelineDateHeader {
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.timelineHeading {
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.timelineParagraph {
+    text-align: left;
+    text-indent: 2em;
+}
+
+.timelineSubheader {
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.alignLeft {
+    float: left;
+}
+
+.alignRight {
+    float: right;
+}
+
+.timelineBackground {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.25;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.timelineEventSplitImage {
+    float: left;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+}
+
+.timelineEventSplitText {
+    float: right;
+    height: 100%;
+    width: 50%;
+}
