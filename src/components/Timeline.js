@@ -44,7 +44,7 @@ function Timeline(props) {
     }
 
     // Set the SVG variables
-    const timelineYPosition = 80;
+    const timelineYPosition = 130;
     const endTickLength = 40;
     const longTickLength = 20;
     const timelinePadding = 50;
@@ -76,7 +76,7 @@ function Timeline(props) {
             <TimelineEvent event={currentEvent} />
 
             <div className="timelineDate" ref={timelineRef}>
-                <svg width={timelineLength} height="150" >
+                <svg width={timelineLength} height="200" >
                     {/* The timeline itself */}
                     <line x1={timelinePadding} y1={timelineYPosition} x2={daysLength + timelinePadding} y2={timelineYPosition} stroke="black"></line>
                     {firstTick}

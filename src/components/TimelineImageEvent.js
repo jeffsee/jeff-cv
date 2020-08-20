@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Carousel, { Modal, ModalGateway } from "react-images";
 
 import './timelineStyles.css';
 
 import { BuildDetailParagraphs } from '../common/TimelineFunctions.js';
 
 function TimelineTextEvent(props) {
+
+    // State for the modal on/off
+    const [ modalIsOpen, setModalIsOpen ] = useState(false);
+
+    // Function for the modal on/off
+    function toggleModal(e) {
+        e.preventDefault();
+        setModalIsOpen(prevState => !prevState);
+    }
+
+    const referenceImage = [
+        { id: 1, source: props.event.image, caption: "" }
+    ];
 
     // If no event passed in, provide the default slide (shouldn't get here)
     if (props.event === null || props.event === undefined) {
@@ -43,10 +57,17 @@ function TimelineTextEvent(props) {
         position: "relative"
     };
 
+    const imageStyle = {
+        backgroundImage: "url(\"" + (props.event.image) + "\")",
+        cursor: "pointer",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "contain",
+        backgroundPosition: "center"
+    }
+
     return (
         <div className="timelineEvent" style={eventStyle}>
-            <div className="timelineEventSplitImage">
-                <img src={props.event.image} alt=""></img>
+            <div className="timelineEventSplitImage" onClick={toggleModal} style={imageStyle}>
             </div>
             <div className="timelineEventSplitText" style={{ position: "relative" }}>
                 <p className="timelineDateHeader">{props.event.dateString}</p>
@@ -55,6 +76,15 @@ function TimelineTextEvent(props) {
                 {timelineText}
                 {icon}
             </div>
+
+            <ModalGateway>
+                {modalIsOpen ? (
+                    <Modal onClose={toggleModal}>
+                        <Carousel views={referenceImage} />
+                    </Modal>
+                ) : null} 
+            </ModalGateway>
+
         </div>
     )
 

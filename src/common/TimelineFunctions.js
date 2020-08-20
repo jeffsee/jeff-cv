@@ -32,7 +32,7 @@ export function generateTimelineEvent(event, startDate, timelinePadding, timelin
     let endLine = null;
     if (startLocation !== endLocation) {
         endPoint = <circle cx={timelinePadding + endLocation} cy={timelineYPosition} r="5" fill="red"></circle>;
-        endLine = <line x1={timelinePadding + endLocation} x2={timelinePadding + endLocation} y1={timelineYPosition - 5} y2={timelineYPosition - priorityDistance} stroke="black"></line>;
+        endLine = <line x1={timelinePadding + endLocation} x2={timelinePadding + endLocation} y1={timelineYPosition - 5} y2={timelineYPosition - priorityDistance} stroke="black" strokeDasharray="10, 10"></line>;
     }
 
     // Set the rectangle style - highlighted if the currently selected event id is the same as this event id
@@ -50,29 +50,41 @@ export function generateTimelineEvent(event, startDate, timelinePadding, timelin
     // Display the icon if given
     let image = null;
     if (event.icon) {
+
+        let imageSize = eventHeight - 3;
+        let imageX = timelinePadding + startLocation + textXOffset;
+        let imageY = timelineYPosition - priorityDistance - (eventHeight - 2);
+        
+        if (eventWidth < imageSize) {
+            imageSize = eventWidth;
+            imageX = timelinePadding + startLocation;
+            imageY = timelineYPosition - priorityDistance - (imageSize * 1.5);
+        }
+
         image = <image 
-                    x={timelinePadding + startLocation + textXOffset} 
-                    y={timelineYPosition - priorityDistance - (eventHeight - 2)}
-                    width={eventHeight - 3} height={eventHeight - 3}
+                    x={imageX} 
+                    y={imageY}
+                    width={imageSize} height={imageSize}
                     xlinkHref={event.icon}
                 ></image>
         textXOffset = textXOffset + eventHeight;
     }
 
-    // TODO: For short events set up the on mouse over to expand?
-    let calculatedEventWidth = event.shortHeading.length * 10;
+    // For single day events - resize to fit
+    let calculatedEventWidth = event.shortHeading.length * 8;
     if (image !== null) {
-        calculatedEventWidth = calculatedEventWidth + 20;
+        calculatedEventWidth = calculatedEventWidth + 35;
     }
 
-    if (eventWidth <= calculatedEventWidth) {
+    if (eventWidth < 1) {
         eventWidth = calculatedEventWidth;
     }
 
     return (
         <g key={event.id} onClick={() => selectEvent(event)}>
+            <title>{event.heading}</title>
             <circle cx={timelinePadding + startLocation} cy={timelineYPosition} r="5" fill="red"></circle>
-            <line x1={timelinePadding + startLocation} x2={timelinePadding + startLocation} y1={timelineYPosition - 5} y2={timelineYPosition - priorityDistance} stroke="black"></line>
+            <line x1={timelinePadding + startLocation} x2={timelinePadding + startLocation} y1={timelineYPosition - 5} y2={timelineYPosition - priorityDistance} stroke="black" strokeDasharray="10, 10"></line>
             <rect x={timelinePadding + startLocation} y={timelineYPosition - priorityDistance - eventHeight} width={eventWidth} height={eventHeight} style={rectangleStyle}></rect>
             {endPoint}
             {endLine}
@@ -92,7 +104,7 @@ export function BuildDetailParagraphs(detailParagraphs) {
         }
         else if (d.type === "ul") {
             return <ul>
-                {d.listItems.map(l => <li>{l}</li>)}
+                {d.listItems.map((l, j) => <li key={j}>{l}</li>)}
             </ul>;
         }
     });

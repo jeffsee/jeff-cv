@@ -93,6 +93,47 @@ const events = [
     priority: 1
   },
   {
+    id: "Princeton Property Group",
+    type: "text",
+    icon: "./images/phone.png",
+    backgroundImage: "",
+    shortHeading: "",
+    heading: "Princeton Property Group",
+    subHeading: "Part Time Telemarketer",
+    dateString: "August 2003 to October 2003",
+    startDate: "2003-08-12",
+    endDate: "2003-10-25",
+    detailParagraphs: [
+      {type: "p", text: "As many a poor university student before and after me, I tried my hand at Telemarketing. With the Princeton Property Group, I was tasked with cold calling people to offer them tickets to FREE property investment seminars. Let's not mince words, it can be pretty soul crushing work and it was not long before I left for greener grass."},
+      {type: "p", text: "Even with such a short tenure, I did feel that my stint there massively helped improve my phone manner, as well as my composure under  (let's call it) verbal pressure. I also learnt that telemarketing is a thankless job, and to this day am always polite with cold callers. For the most part."}
+    ],
+    skills: [],
+    tags: ["Work"],
+    backColor: "#FFFFFF",
+    color: "#000000",
+    priority: 2
+  },
+  {
+    id: "Creative Field Marketing",
+    type: "text",
+    icon: "",
+    backgroundImage: "",
+    shortHeading: "C.F.M.",
+    heading: "Creative Field Marketing",
+    subHeading: "Casual Field Marketer",
+    dateString: "October 2003 to December 2014",
+    startDate: "2003-10-27",
+    endDate: "2004-12-13",
+    detailParagraphs: [
+      {type: "p", text: "Creative Field Marketing"}
+    ],
+    skills: [],
+    tags: ["Work"],
+    backColor: "#FFFFFF",
+    color: "#000000",
+    priority: 2
+  },
+  {
     id: "SecurityMail",
     type: "text",
     icon: "./images/sema_logo.webp",
