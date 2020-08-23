@@ -17,7 +17,7 @@ function TimelineTextEvent(props) {
     }
 
     const referenceImage = [
-        { id: 1, source: props.event.image, caption: "" }
+        { id: 1, source: props.event.image, caption: props.event.imageCaption }
     ];
 
     // If no event passed in, provide the default slide (shouldn't get here)
@@ -31,7 +31,7 @@ function TimelineTextEvent(props) {
     // Generate the paragraphs
     var timelineText = BuildDetailParagraphs(props.event.detailParagraphs);
 
-    // If we have an icon - display it in the background
+    // If we have a background - display it
     let icon = null;
     if (props.event.backgroundImage) {
         icon = 

@@ -39,7 +39,8 @@
     justify-content: space-between;
     box-sizing: border-box;
     background-color: lightgray;
-    flex: 0 0 20%;
+    flex: 0 0 125px;
+    height: 125px;
 }
 
 .timelineProfileImage {
@@ -73,6 +74,20 @@
     text-align: right;
 }
 
+.timelineEvent {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    box-shadow: 6px 6px 6px black;
+    flex: 1 1 auto;
+    height: calc(100% - 275px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+}
+
 .timelineDate {
     overflow-y: hidden;
     overflow-x: scroll;
@@ -80,14 +95,9 @@
     z-index: 999;
     scroll-behavior: smooth;
     margin: 2em;
-    flex: 0 0 200px;
-}
-
-.timelineEvent {
-    width: 100%;
-    padding: 10px;
-    box-shadow: 10px 10px 10px black;
-    flex: 1 0;
+    flex: 0 1 200px;
+    height: 200px;
+    min-height: 200px;
 }
 
 .timelineDateHeader {

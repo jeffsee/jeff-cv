@@ -14,7 +14,7 @@ function Timeline(props) {
     const [currentEvent, setCurrentEvent] = useState(null);
 
     // Set the state for the zoom factor
-    const [zoomFactor, setZoomFactor] = useState(5);
+    const [zoomFactor, setZoomFactor] = useState(4);
 
     // Set the ref to the timeline
     const timelineRef = useRef(null);

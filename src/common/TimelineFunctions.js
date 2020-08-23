@@ -31,7 +31,7 @@ export function generateTimelineEvent(event, startDate, timelinePadding, timelin
     let endPoint = null;
     let endLine = null;
     if (startLocation !== endLocation) {
-        endPoint = <circle cx={timelinePadding + endLocation} cy={timelineYPosition} r="5" fill="red"></circle>;
+        endPoint = <circle cx={timelinePadding + endLocation} cy={timelineYPosition} r="5" fill="orange"></circle>;
         endLine = <line x1={timelinePadding + endLocation} x2={timelinePadding + endLocation} y1={timelineYPosition - 5} y2={timelineYPosition - priorityDistance} stroke="black" strokeDasharray="10, 10"></line>;
     }
 
@@ -55,10 +55,10 @@ export function generateTimelineEvent(event, startDate, timelinePadding, timelin
         let imageX = timelinePadding + startLocation + textXOffset;
         let imageY = timelineYPosition - priorityDistance - (eventHeight - 2);
         
-        if (eventWidth < imageSize) {
+        if (eventWidth > 0 && eventWidth < imageSize) {
             imageSize = eventWidth;
             imageX = timelinePadding + startLocation;
-            imageY = timelineYPosition - priorityDistance - (imageSize * 1.5);
+            imageY = timelineYPosition - priorityDistance - (eventHeight - 2);
         }
 
         image = <image 
@@ -73,7 +73,7 @@ export function generateTimelineEvent(event, startDate, timelinePadding, timelin
     // For single day events - resize to fit
     let calculatedEventWidth = event.shortHeading.length * 8;
     if (image !== null) {
-        calculatedEventWidth = calculatedEventWidth + 35;
+        calculatedEventWidth = calculatedEventWidth + 38;
     }
 
     if (eventWidth < 1) {
@@ -82,8 +82,8 @@ export function generateTimelineEvent(event, startDate, timelinePadding, timelin
 
     return (
         <g key={event.id} onClick={() => selectEvent(event)}>
-            <title>{event.heading}</title>
-            <circle cx={timelinePadding + startLocation} cy={timelineYPosition} r="5" fill="red"></circle>
+            <title>{event.heading} ({event.dateString})</title>
+            <circle cx={timelinePadding + startLocation} cy={timelineYPosition} r="5" fill="orange"></circle>
             <line x1={timelinePadding + startLocation} x2={timelinePadding + startLocation} y1={timelineYPosition - 5} y2={timelineYPosition - priorityDistance} stroke="black" strokeDasharray="10, 10"></line>
             <rect x={timelinePadding + startLocation} y={timelineYPosition - priorityDistance - eventHeight} width={eventWidth} height={eventHeight} style={rectangleStyle}></rect>
             {endPoint}
@@ -103,7 +103,7 @@ export function BuildDetailParagraphs(detailParagraphs) {
             return <p key={i} className="timelineParagraph">{d.text}</p>;
         }
         else if (d.type === "ul") {
-            return <ul>
+            return <ul key={i}>
                 {d.listItems.map((l, j) => <li key={j}>{l}</li>)}
             </ul>;
         }

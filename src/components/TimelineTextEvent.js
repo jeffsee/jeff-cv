@@ -17,7 +17,7 @@ function TimelineTextEvent(props) {
     // Generate the paragraphs
     var timelineText = BuildDetailParagraphs(props.event.detailParagraphs);
 
-    // If we have an icon - display it in the background
+    // If we have a background, display it
     let icon = null;
     if (props.event.backgroundImage) {
         icon = 

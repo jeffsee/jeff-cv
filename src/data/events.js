@@ -11,7 +11,7 @@ const events = [
     detailParagraphs: [
       {type: "p", text: "I was born in the Royal Prince Alfred hospital, located in Sydney's inner west."},
       {type: "p", text: "Growing up, we lived in the suburb of Balmain. Details are a little hazy, but I had a happy childhood as far as I recall, and by all reports I was a bright kid. Of course, this is all according to my mum, who may not be the most objective judge."},
-      {type: "p", text: "That being said, my biggest claim to fame at the time was that I was able to read before hitting school - which seemed to impress everyone greatly. Though again, this is according to my mum."}
+      {type: "p", text: "That being said, my biggest claim to fame at the time was that I was able to read before hitting school - which seemed to impress everyone greatly. Though again, this is according to my mum. Who also says I'm cool."}
     ],
     tags: ["Personal"],
     priority: 1
@@ -32,7 +32,7 @@ const events = [
       {type: "p", text: "With regards to my future career, this is probably when my interest in computing - and programming in particular - first developed. Using a second hand IBM 286, I dived head-first into the technical world, with my earliest memory being coding a working blackjack game using QBASIC."}
     ],
     skills: [
-      { "VB.NET": "Does coding in BASIC count? It's the precursor to the precursor of VB.NET" }
+      { ".NET Framework": "Does coding in BASIC count? It's the precursor to the precursor of VB.NET" }
     ],
     tags: ["Education"],
     backColor: "#FAFF70",
@@ -42,6 +42,7 @@ const events = [
     id: "Fort Street High School",
     type: "image",
     image: "./images/fortStreetReference.webp",
+    imageCaption: "I spent six years at high school, and all I got was this lousy reference. And all those certificates and things.",
     icon: "./images/fshs_logo.webp",
     backgroundImage: "./images/fshs_bg.webp",
     shortHeading: "Fort Street H.S.",
@@ -56,7 +57,7 @@ const events = [
       {type: "p", text: "Career wise, this time was where I really developed my interest in the world of programming. Some of the projects I remember undertaking were a casino game written in QBASIC, A horse racing game in Visual Basic, and a dice cricket simulator in Pascal."}
     ],
     skills: [
-      { "VB.NET": "I played around with both BASIC and Visual Basic; in both my spare time and at school" },
+      { ".NET Framework": "I played around with both BASIC and Visual Basic; in both my spare time and at school" },
       { "Pascal": "Can't actually remember why I was using Pascal - I'd assume it was through school. The cricket dice simulator was something we used to play with real dice during class"}
     ],
     tags: ["Education"],
@@ -125,7 +126,9 @@ const events = [
     startDate: "2003-10-27",
     endDate: "2004-12-13",
     detailParagraphs: [
-      {type: "p", text: "Creative Field Marketing"}
+      {type: "p", text: "During the latter days of university, and during my post-graduation job hunt, I worked as a casual field marketer for Creative Field Marketing. This could actually be quite an interesting position, depending on which client I was assigned to."},
+      {type: "p", text: "For instance, on an assignment for Mattel we were tasked with playing with... I mean setting up toy cars and race tracks for in-store demonstrations. Though on the other end of the scale, for Fairfax we had to wake up hideously early in the morning and stand in the cold to hand out their free Sydney Morning Herald lift out called Metro (mX before mX was around)."},
+      {type: "p", text: "Unfortunately there was far more of the latter type of gig, but it was still a good way for a uni student / unemployed job seeker to pick up some cash. It also allowed me to get out of my shell a bit and interact with all sorts of clients, as well as the general public."}
     ],
     skills: [],
     tags: ["Work"],
@@ -167,7 +170,82 @@ const events = [
     backColor: "#FFCC99",
     color: "#000000",
     priority: 1
+  },
+  {
+    id: "Converga",
+    type: "text",
+    icon: "./images/converga_logo.jpg",
+    backgroundImage: "",
+    shortHeading: "Converga",
+    heading: "Converga",
+    subHeading: "Senior Developer",
+    dateString: "March 2008 to September 2013",
+    startDate: "2008-03-26",
+    endDate: "2013-08-30",
+    detailParagraphs: [
+      {type: "p", text: "Converga is a business services provider. I was brought into their development team, which largely looked after their Paperless Accounts Payable solution. This consisted of a .NET web application, MS SQL backend and several small 'agents', which were windows console apps to perform integration and workflow functions. As a fairly junior developer when I started, it felt like I was thrown a bit in the deep end, as it was a small, busy team - so there was not a lot in the way of guidance or mentoring. The company was often in a state of flux as well - semi-frequent restructures meant that the company direction could change as often as the wind. Not to say that this was a bad thing - it definitely helped me grow in a lot of different ways;"},
+      {type: "ul", listItems: [
+        "As part of such a small team (at times down to two of us), I got a great deal of exposure to all aspects of the software development life-cycle in a fast-paced environment",
+        "The flux gave me the opportunity to report to many different business lines - such as technical, client services, sales - which helped me understand different audiences, and adjust accordingly",
+        "Depending on the business area I reported into, I also got experience in dealing with clients - over the phone or email; face to face meetings; and even at one stage being embedded in their office"
+      ]},
+      {type: "p", text: "Socially, it was a great team (I think I may have to say that, as a member of the social committee). But genuinely, I really enjoyed the social sports teams, fitness boot camps and crossword club - not to mention the usual monthly drinks and Christmas parties. And last, but definitely not least (also probably legally obliged to say that), I met my now wife through the company."}
+    ],
+    skills: [
+      { ".NET Framework": "" }
+    ],
+    tags: ["Work"],
+    backColor: "#FF6666",
+    color: "#000000",
+    priority: 1
   },  
+  {
+    id: "Converga Employee of the Year",
+    type: "image",
+    icon: "./images/star.png",
+    image: "./images/converga_employee_of_the_year.jpg",
+    imageCaption: "",
+    backgroundImage: "",
+    shortHeading: "",
+    heading: "Converga Employee of the Year 2010",
+    subHeading: "",
+    dateString: "Awarded February 2011",
+    startDate: "2011-02-25",
+    endDate: "2011-02-25",
+    detailParagraphs: [
+      {type: "p", text: "I won employee of the year 2010"}
+    ],
+    skills: [
+    ],
+    tags: ["Work"],
+    backColor: "#FF6666",
+    color: "#000000",
+    priority: 2
+  },
+  {
+    id: "DST Bluedoor",
+    type: "text",
+    icon: "./images/dst_logo.png",
+    backgroundImage: "",
+    shortHeading: "DST Bluedoor",
+    heading: "DST Bluedoor",
+    subHeading: "Developer",
+    dateString: "March 2014 to November 2015",
+    startDate: "2014-03-31",
+    endDate: "2015-11-06",
+    detailParagraphs: [
+      {type: "p", text: "DST Bluedoor is a global provider of wealth management software. I was a part of the Open Door team, which focused on integrating client data into the product suite."},
+      {type: "p", text: "There were several developers working in each team, and each team had very clearly defined roles - meaning that the bulk of my work here was translating the business specifications into design documents for someone else, or to write the .NET code from someone else's specs."},
+      {type: "p", text: "Honestly, there wasn't much to learn in this job - pure .NET coding, some SOAP based APIs and a little bit of front end ASP.NET work. So when I got a cold call from a DWS recruiter - who added that they would be able to assist me in moving back up to Sydney when the time came - I was happy to move on."}
+    ],
+    skills: [
+      { ".NET Framework": "" }
+    ],
+    tags: ["Work"],
+    backColor: "#99CCFF",
+    color: "#000000",
+    priority: 1
+  },
 ];
 
 // Wrap it in a function in case I ever decide to convert it into an API
