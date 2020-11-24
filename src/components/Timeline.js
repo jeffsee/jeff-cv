@@ -1,11 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import '../components/timelineStyles.css'
-import TimelineProfile from './TimelineProfile.js';
-import TimelineEvent from './TimelineEvent.js';
-import { calculateDaysDifference, convertDateToMMMMyyyy, getAllYearsBetweenDates } from '../common/DateFunctions.js';
-import { generateTickForDate, generateTimelineEvent } from '../common/TimelineFunctions.js';
 
+import Event from './Event.js';
+import TimelineDateLine from './TimelineDateLine.js';
+import TimelineTick from './TimelineTick.js';
+import TimelineEvent from './TimelineEvent.js';
+
+import { calculateDaysDifference, convertDateToMMMMyyyy, getAllYearsBetweenDates } from '../common/DateFunctions.js';
+
+import '../common/TimelinePositions.js';
 import getEvents from '../data/events.js';
 
 function Timeline(props) {
@@ -14,7 +18,7 @@ function Timeline(props) {
     const [currentEvent, setCurrentEvent] = useState(null);
 
     // Set the state for the zoom factor
-    const [zoomFactor, setZoomFactor] = useState(4);
+    const [zoomFactor, setZoomFactor] = useState(3);
 
     // Set the ref to the timeline
     const timelineRef = useRef(null);
@@ -43,23 +47,13 @@ function Timeline(props) {
         setCurrentEvent(event);
     }
 
-    // Set the SVG variables
-    const timelineYPosition = 130;
-    const endTickLength = 40;
-    const longTickLength = 20;
-    const timelinePadding = 50;
-
     // Get the length of the timeline
     const daysLength = calculateDaysDifference(startDate, endDate, zoomFactor);
-    const timelineLength = daysLength + (timelinePadding * 2);
-
-    // Calculate the first and last ticks
-    const firstTick = generateTickForDate(startDate, startDate, timelinePadding, timelineYPosition, endTickLength, convertDateToMMMMyyyy(startDate), 50, zoomFactor);
-    const lastTick = generateTickForDate(endDate, startDate, timelinePadding, timelineYPosition, endTickLength, convertDateToMMMMyyyy(endDate), 50, zoomFactor);
+    const timelineLength = daysLength + (global.timelineXPosition * 2);
 
     // Get the years for long ticks
     const longTickDates = getAllYearsBetweenDates(startDate, endDate);
-    const longTicks = longTickDates.map(d => generateTickForDate(d, startDate, timelinePadding, timelineYPosition, longTickLength, d.getFullYear().toString(), 15, zoomFactor));
+    const longTicks = longTickDates.map(d => <TimelineTick key={d} startDate={startDate} tickDate={d} tickLength={global.longTickLength} tickText={d.getFullYear().toString()} textXOffset={15} zoomFactor={zoomFactor} />);
 
     // Generate the timeline events
     const timelineEvents = getEvents();
@@ -67,21 +61,25 @@ function Timeline(props) {
     if (currentEvent) {
         currentEventId = currentEvent.id;
     }
-    const events = timelineEvents.sort(e => e.priority).map(e => generateTimelineEvent(e, startDate, timelinePadding, timelineYPosition, selectEvent, currentEventId, zoomFactor));
+    
+    const events = timelineEvents.sort(e => e.priority).map(e => <TimelineEvent key={e.id} event={e} startDate={startDate} selectEvent={selectEvent} currentEventId={currentEventId} zoomFactor={zoomFactor} />);
 
     return (
         <div className="timeline">
             
-            <TimelineProfile event={currentEvent} />
-            <TimelineEvent event={currentEvent} />
+            <Event event={currentEvent} />
 
             <div className="timelineDate" ref={timelineRef}>
                 <svg width={timelineLength} height="200" >
                     {/* The timeline itself */}
-                    <line x1={timelinePadding} y1={timelineYPosition} x2={daysLength + timelinePadding} y2={timelineYPosition} stroke="black"></line>
-                    {firstTick}
+                    <TimelineDateLine daysLength={daysLength} />
+                    {/* The starting tick */}
+                    <TimelineTick startDate={startDate} tickDate={startDate} tickLength={global.endTickLength} tickText={convertDateToMMMMyyyy(startDate)} textXOffset={30} zoomFactor={zoomFactor} />
+                    {/* The ending tick */}
+                    <TimelineTick startDate={startDate} tickDate={endDate} tickLength={global.endTickLength} tickText={convertDateToMMMMyyyy(endDate)} textXOffset={60} zoomFactor={zoomFactor} />
+                    {/* The long ticks */}
                     {longTicks}
-                    {lastTick}
+                    {/* The events */}
                     {events}
                 </svg>
             </div>

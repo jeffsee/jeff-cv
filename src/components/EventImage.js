@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Carousel, { Modal, ModalGateway } from "react-images";
 
-import './timelineStyles.css';
+import './event.css';
 
 import { BuildDetailParagraphs } from '../common/TimelineFunctions.js';
 
-function TimelineTextEvent(props) {
+function EventImage(props) {
 
     // State for the modal on/off
     const [ modalIsOpen, setModalIsOpen ] = useState(false);
@@ -24,7 +24,7 @@ function TimelineTextEvent(props) {
     if (props.event === null || props.event === undefined) {
         // TODO
         return (
-            <div className="timelineEvent"><h1 className="timelineHeading">No event.</h1></div>
+            <div className="event"><h1 className="eventHeading">No event.</h1></div>
         );
     }
 
@@ -35,7 +35,7 @@ function TimelineTextEvent(props) {
     let icon = null;
     if (props.event.backgroundImage) {
         icon = 
-        <div className="timelineBackground">
+        <div className="eventBackground">
             <img src={props.event.backgroundImage} alt="Icon" width="100%" height="100%"></img>
         </div>;
     }
@@ -62,17 +62,18 @@ function TimelineTextEvent(props) {
         cursor: "pointer",
         backgroundRepeat: "no-repeat",
         backgroundSize: "contain",
-        backgroundPosition: "center"
+        backgroundPosition: "center",
+        textAlign: "center"
     }
 
     return (
-        <div className="timelineEvent" style={eventStyle}>
-            <div className="timelineEventSplitImage" onClick={toggleModal} style={imageStyle}>
+        <div className="event" style={eventStyle}>
+            <div className="eventSplitLeft" onClick={toggleModal} style={imageStyle}>
             </div>
-            <div className="timelineEventSplitText" style={{ position: "relative" }}>
-                <p className="timelineDateHeader">{props.event.dateString}</p>
-                <h1 className="timelineHeading">{props.event.heading}</h1>
-                <h3 className="timelineSubheader">{props.event.subHeading}</h3>
+            <div className="eventSplitRight" style={{ position: "relative", padding: "10px" }}>
+                <p className="eventDateHeader">{props.event.dateString}</p>
+                <h1 className="eventHeading">{props.event.heading}</h1>
+                <h3 className="eventSubheader">{props.event.subHeading}</h3>
                 {timelineText}
                 {icon}
             </div>
@@ -90,4 +91,4 @@ function TimelineTextEvent(props) {
 
 }
 
-export default TimelineTextEvent;
+export default EventImage;

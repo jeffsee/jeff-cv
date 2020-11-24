@@ -1,24 +1,3 @@
-.timelineHeader {
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-    color: white;
-    text-align: center;
-    font-style: italic;
-    padding-top: 25vh;
-    z-index: 1;
-}
-
-.downArrow {
-    position: absolute;
-    bottom: 10px;
-    height: 50px;
-    width: 100%;
-    background-color: black;
-    object-fit: contain;
-    z-index: 2;
-}
-
 .timeline {
     height: 100vh;
     width: 100%;
@@ -29,63 +8,7 @@
     justify-content: space-between;
     box-sizing: border-box;
     scroll-behavior: smooth;
-}
-
-.timelineProfile {
-    padding: 1em;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    box-sizing: border-box;
-    background-color: lightgray;
-    flex: 0 0 125px;
-    height: 125px;
-}
-
-.timelineProfileImage {
-    border: 5px solid white;
-    border-bottom: 20px solid white;
-    box-shadow: 3px 3px 3px black;
-    max-height: 100%;
-    flex: 0 0 50px;
- }
-
-.timelineProfileDetails {
-    margin-left: 1em;
-    margin-right: 1em;
-    margin-top: 0;
-    height: 100%;
-    vertical-align: top;
-    flex: 1;
-}
-
-.timelineProfileOtherSelect {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.timelineProfileOther {
-    flex: 5;
-}
-
-.timelineProfileContactDetails {
-    text-align: right;
-}
-
-.timelineEvent {
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    box-shadow: 6px 6px 6px black;
-    flex: 1 1 auto;
-    height: calc(100% - 275px);
-    overflow-y: auto;
-    overflow-x: hidden;
-    position: relative;
+    background-color: black;
 }
 
 .timelineDate {
@@ -98,33 +21,8 @@
     flex: 0 1 200px;
     height: 200px;
     min-height: 200px;
-}
-
-.timelineDateHeader {
-    text-align: center;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 16px;
-}
-
-.timelineHeading {
-    text-align: center;
-    margin-top: 0;
-    padding-top: 0;
-}
-
-.timelineParagraph {
-    text-align: left;
-    text-indent: 2em;
-}
-
-.timelineSubheader {
-    font-style: italic;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+    background-color: white;
+    opacity: 85%;
 }
 
 .alignLeft {
@@ -135,38 +33,7 @@
     float: right;
 }
 
-.timelineBackground {
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0.25;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.timelineEventSplitImage {
-    float: left;
-    height: 100%;
-    width: 50%;
-    text-align: center;
-}
-
-.timelineEventSplitText {
-    float: right;
-    height: 100%;
-    width: 50%;
-}
-
-.timelineProfileOtherSelectButton {
-    background-color: transparent;
-    font-family: 'Quicksand', sans-serif;
-    border: 0;
-    padding: 5px;
-}
-
-.timelineProfileOtherSelectButtonSelected {
-    text-decoration: underline;
+.timelineEvent {
+    stroke-width: 1px;
+    stroke: black;
 }

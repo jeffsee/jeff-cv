@@ -1,0 +1,65 @@
+.event {
+    left: 10vw;
+    width: 80vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    box-shadow: 6px 6px 6px black;
+    flex: 1 1 auto;
+    height: calc(100% - 275px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.eventHeading {
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.eventDateHeader {
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.eventSubheader {
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.eventBackground {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.25;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.eventSplitLeft {
+    float: left;
+    height: 100%;
+    width: 50%;
+}
+
+.eventSplitRight {
+    float: right;
+    height: 100%;
+    width: 50%;
+}
+
+.eventParagraph {
+    text-align: left;
+    text-indent: 2em;
+}

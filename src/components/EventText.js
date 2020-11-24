@@ -1,16 +1,16 @@
 import React from 'react';
 
-import './timelineStyles.css';
+import './event.css';
 
 import { BuildDetailParagraphs } from '../common/TimelineFunctions.js';
 
-function TimelineTextEvent(props) {
+function EventText(props) {
 
     // If no event passed in, provide the default slide (shouldn't get here)
     if (props.event === null || props.event === undefined) {
         // TODO
         return (
-            <div className="timelineEvent"><h1 className="timelineHeading">No event.</h1></div>
+            <div className="event"><h1 className="eventHeading">No event.</h1></div>
         );
     }
 
@@ -21,7 +21,7 @@ function TimelineTextEvent(props) {
     let icon = null;
     if (props.event.backgroundImage) {
         icon = 
-        <div className="timelineBackground">
+        <div className="eventBackground">
             <img src={props.event.backgroundImage} alt="Icon" width="100%" height="100%"></img>
         </div>;
     }
@@ -43,10 +43,10 @@ function TimelineTextEvent(props) {
     };
 
     return (
-        <div className="timelineEvent" style={eventStyle}>
-            <p className="timelineDateHeader">{props.event.dateString}</p>
-            <h1 className="timelineHeading">{props.event.heading}</h1>
-            <h3 className="timelineSubheader">{props.event.subHeading}</h3>
+        <div className="event" style={eventStyle}>
+            <p className="eventDateHeader">{props.event.dateString}</p>
+            <h1 className="eventHeading">{props.event.heading}</h1>
+            <h3 className="eventSubheader">{props.event.subHeading}</h3>
             <div style={{clear: "both", position: "relative"}}>
                 {timelineText}
             </div>
@@ -56,4 +56,4 @@ function TimelineTextEvent(props) {
 
 }
 
-export default TimelineTextEvent;
+export default EventText;
