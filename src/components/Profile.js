@@ -1,19 +1,10 @@
 import React from 'react';
 
-const profileStyle = {
-    width: "100%",
-    height: "100vh",
-    backgroundColor: "black",
-    color: "white",
-    textAlign: "center",
-    paddingTop: "2vh",
-    paddingLeft: "10vw",
-    zIndex: "1",
-}
+import './event.css';
 
 const profilePanelStyle = {
-    width: "80vw",
-    height: "500px",
+    width: "100%",
+    height: "100%",
     backgroundColor: "white",
     opacity: "85%",
     color: "black",
@@ -23,8 +14,7 @@ const profilePanelStyle = {
 const profileImageStyle = {
     position: "relative",
     textAlign: "center",
-    color: "white",
-    width: "334px"
+    color: "white"
 }
 
 const profilePicStyle = {
@@ -32,31 +22,19 @@ const profilePicStyle = {
     height: "100%"
 }
 
-const profilePicCaptionStyle = {
-    position: "absolute",
-    bottom: "0px",
-    left: "0px",
-    paddingLeft: "10px",
-    paddingRight: "10px",
-    width: "100%"
-}
-
 const profileInfoStyle = {
     flex: "1",
     textAlign: "left",
-    paddingTop: "10px",
-    marginRight: "20px",
-    marginLeft: "50px"
+    margin: "20px"
 }
 
 function Profile(props) {
 
     return (
-        <div style={profileStyle}>
+        <div className="event">
             <div style={profilePanelStyle}>
                 <div style={profileImageStyle}>
-                    <img style={profilePicStyle} src="./images/jeff_profile.jpg" alt="Profile Pic" />
-                    <p style={profilePicCaptionStyle}>Don't let the pose fool you, I'm not a model. Willing to listen to any offers though.</p>
+                    <img style={profilePicStyle} src="./images/jeff_profile.jpg" alt="ProfilePic" title="Don't let the pose fool you, I'm not a model. Willing to listen to any offers though." />
                 </div>
                 <div style={profileInfoStyle}>
                     <h1>Jeff See</h1>

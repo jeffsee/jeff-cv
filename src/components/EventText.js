@@ -6,7 +6,7 @@ import { BuildDetailParagraphs } from '../common/TimelineFunctions.js';
 
 function EventText(props) {
 
-    // If no event passed in, provide the default slide (shouldn't get here)
+    // If no event passed in, provide the default slide
     if (props.event === null || props.event === undefined) {
         // TODO
         return (

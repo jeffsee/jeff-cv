@@ -1,11 +1,10 @@
 .event {
-    left: 10vw;
-    width: 80vw;
+    width: 97vw;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 5px;
     padding-top: 5px;
-    box-shadow: 6px 6px 6px black;
+    margin: 1vw;
     flex: 1 1 auto;
     height: calc(100% - 275px);
     overflow-y: auto;

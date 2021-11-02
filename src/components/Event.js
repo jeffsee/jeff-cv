@@ -3,7 +3,7 @@ import React from 'react';
 import EventText from './EventText.js';
 import EventImage from './EventImage.js';
 import EventPosition from './EventPosition.js';
-import EventBlank from './EventBlank.js';
+import Profile from './Profile.js';
 
 import './event.css';
 
@@ -19,7 +19,7 @@ function Event(props) {
     if (props.event === null || props.event === undefined) {
         // TODO
         return (
-            <EventBlank />
+            <Profile />
         );
     }
 

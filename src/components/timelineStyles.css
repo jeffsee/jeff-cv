@@ -2,7 +2,6 @@
     height: 100vh;
     width: 100%;
     overflow: hidden;
-    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -14,14 +13,15 @@
 .timelineDate {
     overflow-y: hidden;
     overflow-x: scroll;
-    position: flex;
+    position: relative;
+    width: 97vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
     z-index: 999;
     scroll-behavior: smooth;
-    margin: 2em;
-    flex: 0 1 200px;
     height: 200px;
     min-height: 200px;
-    background-color: white;
+    background-color: lightblue;
     opacity: 85%;
 }
 
@@ -36,4 +36,9 @@
 .timelineEvent {
     stroke-width: 1px;
     stroke: black;
+}
+
+.timelineHeader {
+    text-align: center;
+    color: white;
 }

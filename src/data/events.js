@@ -211,10 +211,10 @@ const events = [
     backgroundImage: "",
     shortHeading: "DWS",
     heading: "DWS",
-    subHeading: "Hired as IT Consultant",
-    dateString: "Started November 2015",
+    subHeading: "IT Consultant",
+    dateString: "November 2015 to July 2020",
     startDate: "2015-11-09",
-    endDate: "2015-11-09",
+    endDate: "2020-07-13",
     detailParagraphs: [
       {type: "p", text: "DWS is a technology consultancy, providing IT services of all types to a large range of blue-chip and government clients. Brought on as a Consultant Developer, I was expected to go client to client to assist them in all facets of the Software Development process."},
       {type: "p", text: "In reality though, it didn't work out like that, as I spent the vast majority of my time with DWS on client - JBWere. Obviously, I was doing something right there, as my contract there was renewed for over four years - only ending as the COVID-19 pandemic began to affect business conditions."},
@@ -224,7 +224,7 @@ const events = [
     tags: ["Work"],
     backColor: "#4D8EFF",
     color: "#000000",
-    priority: 2
+    priority: 1
   },
   {
     id: "JBWere",
@@ -245,7 +245,7 @@ const events = [
     skills: [
       { type: ".NET Framework (C# and VB.NET)", text: "" },
       { type: "MS SQL (and Entity Framework)", text: "" },
-      { type: "React and .NET Core", text: "Towards the end of my tenure, I helped to write a proof of concept to further uplift the application into a React based web-application, using .NET Core microservices as a backend" },
+      { type: "React and .NET Core", text: "Towards the end of my tenure, I helped to write a proof of concept to further uplift the application into a React based web-application and .NET Core microservices" },
       { type: "nUnit (and Moq)", text: "I led the introduction of unit testing into the JBWere code base" },
       { type: "Source Control", text: "TFS, Git" },
       { type: "CI/CD", text: "Jenkins" },
@@ -255,7 +255,7 @@ const events = [
     tags: ["Work"],
     backColor: "#99DDFF",
     color: "#000000",
-    priority: 1
+    priority: 2
   },
   {
     id: "LexisNexis",
@@ -281,7 +281,7 @@ const events = [
     tags: ["Work"],
     backColor: "#FFA3A3",
     color: "#000000",
-    priority: 1
+    priority: 2
   },
   {
     id: "CreditCorp",
@@ -304,6 +304,7 @@ const events = [
     skills: [
       { type: ".NET Framework (C# and VB.NET)", text: "" },
       { type: "MS SQL", text: "" },
+      { type: "AngularJS", text: ""},
       { type: "Web Services", text: "SOAP based and RESTful" },
       { type: "nUnit", text: "" },
       { type: "Source Control", text: "TFS, Git" },

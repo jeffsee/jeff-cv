@@ -42,9 +42,14 @@ function Timeline(props) {
     });
 
 
-    // The function to handle selecting a new event
+    // The function to handle selecting (or deselecting) an event
     function selectEvent(event) {
-        setCurrentEvent(event);
+        if (event.id === currentEventId) {
+            setCurrentEvent(null);
+        }
+        else {
+            setCurrentEvent(event);
+        }
     }
 
     // Get the length of the timeline
@@ -66,7 +71,6 @@ function Timeline(props) {
 
     return (
         <div className="timeline">
-            
             <Event event={currentEvent} />
 
             <div className="timelineDate" ref={timelineRef}>
