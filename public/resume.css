@@ -55,10 +55,10 @@ p.heading {
 
 .resumeHeader {
     width: 100%;
-    background-color: steelblue;
-    color: white;
-    height: 150px;
-    padding: 30px;
+    background-color: #FFD580;
+    color: black;
+    height: 130px;
+    padding: 25px;
 }
 
 .nameDetails {
@@ -75,13 +75,13 @@ p.heading {
 .experience {
     float: left;
     width: 65%;
-    padding: 30px;
+    padding: 25px;
 }
 
 .skills {
     float: right;
     width: 35%;
-    padding: 30px;
+    padding: 25px;
     font-size: 10px;
 }
 
@@ -94,6 +94,7 @@ p.heading {
 .jobDates {
     font-style: italic;
     text-align: right;
+    white-space: nowrap;
 }
 
 .jobDetails {
@@ -119,5 +120,5 @@ p.heading {
 .education {
     float: right;
     width: 35%;
-    padding: 30px;
+    padding: 25px;
 }
